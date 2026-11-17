@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\CcpaRetention;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class CcpaRetentionServiceProvider extends PackageServiceProvider
+class CcpaRetentionServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-ccpa-retention';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-ccpa-retention')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
